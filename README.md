@@ -23,8 +23,20 @@
     npm init -y
     npm install express socket.io ssh2 cors
   - sudo docker run -d --name cloudflared --restart unless-stopped \
-  cloudflare/cloudflared:latest tunnel --no-autoupdate run --token <Your_CLOUDFLARE_TUNNEL_TOKEN>
+  cloudflare/cloudflared:latest tunnel --no-autoupdate run --token <CLOUDFLARE_TUNNEL_TOKEN>
   
-----------------------------------------------<Latest:2026.10.25>-------------------------------------------------------------
+*WEB-SERVER
+  - Rocky 10 install
+  - add docker
+  - docker run cloudflare/cloudflared:latest tunnel --no-autoupdate run --token CloudFlare_Tunnel_Token
+  - docker run -d --name webs -p 8080:80 nginx:latest
+  - set cloudflare Path - Domain , host path : http://localhost:8080
+
+*phone-server
+  - USE Termux
+  - add Libreswan
+  - add sshd
+
 
 <img width="918" height="806" alt="image" src="https://github.com/user-attachments/assets/059f7f94-7f0f-4763-9b95-84c485522a0b" />
+----------------------------------------------<Latest:2026.10.25>-------------------------------------------------------------
